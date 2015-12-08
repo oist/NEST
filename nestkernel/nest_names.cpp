@@ -360,6 +360,14 @@ const Name xs( "xs" );
 const Name z( "z" );
 const Name z_connected( "z_connected" );
 
+// pd models
+
+const Name g_T("g_T");
+const Name g_H("g_H");
+const Name g_KL("g_KL");
+const Name E_H("E_H");
+const Name E_KL("E_KL");
+
 // Specific to TC neuron models
 const Name TC_m("TC_m");
 const Name TC_h("TC_h");

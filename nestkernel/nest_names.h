@@ -389,6 +389,15 @@ extern const Name xs; //!< current scaling factor of the synaptic weight [0...1]
 extern const Name z;           //!< Number of available synaptic elements per node
 extern const Name z_connected; //!< Number of connected synaptic elements per node
 
+// pd models
+
+extern const Name g_T;        //!< Calcium conductance
+extern const Name g_H;        //!<  H channel reversal potential
+extern const Name g_KL;        //!< Potassium leak conductance
+extern const Name E_KL;        //!< Potassium leak conductance
+extern const Name E_H;        //!<  H channel reversal potential
+
+
 // Specific to TC neuron models
 extern const Name TC_m;
 extern const Name TC_h;

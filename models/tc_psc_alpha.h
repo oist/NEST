@@ -151,7 +151,7 @@ SeeAlso: tc_cond_exp_traub
     void handle(CurrentEvent &);
     void handle(DataLoggingRequest &);
     
-    port send_test_event(Node &, rport, synindex, bool) 
+    port send_test_event(Node &, rport, synindex, bool);
     port handles_test_event(SpikeEvent &, rport);
     port handles_test_event(CurrentEvent &, rport);
     port handles_test_event(DataLoggingRequest &, rport);
