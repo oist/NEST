@@ -131,6 +131,9 @@
 #include "music_message_in_proxy.h"
 #endif
 
+#include "tc_psc_alpha.h"
+
+
 namespace nest
 {
 // At the time when ModelsModule is constructed, the SLI Interpreter
@@ -438,6 +441,8 @@ ModelsModule::init( SLIInterpreter* )
     net_, "stdp_dopamine_synapse" );
   register_connection_model< STDPDopaConnection< TargetIdentifierIndex > >(
     net_, "stdp_dopamine_synapse_hpc" );
+
+  register_model< tc_psc_alpha >( net_, "tc_psc_alpha" );
 }
 
 } // namespace nest

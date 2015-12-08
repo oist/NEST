@@ -359,5 +359,18 @@ const Name xs( "xs" );
 
 const Name z( "z" );
 const Name z_connected( "z_connected" );
+
+// Specific to TC neuron models
+const Name TC_m("TC_m");
+const Name TC_h("TC_h");
+const Name TC_n("TC_n");
+const Name TC_a("TC_a");
+const Name TC_b("TC_b");
+const Name TC_o1("TC_o1");
+const Name TC_p0("TC_p0");
+const Name TC_c1("TC_c1");
+const Name TC_cai("TC_cai");
+
+
 }
 }
