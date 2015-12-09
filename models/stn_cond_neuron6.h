@@ -74,21 +74,18 @@ namespace nest
      * way of doing things, although all other compilers
      * happily live without.
      */
-#ifndef IS_BLUEGENE
-    using  Node::check_connection;
-#endif
-    using  Node::connect_sender;
+    using  Node::handles_test_event;
     using  Node::handle;
 
-	port check_connection(Connection&,  port);
     
     void handle(SpikeEvent &);
     void handle(CurrentEvent &);
     void handle(DataLoggingRequest &);
     
-	port connect_sender(SpikeEvent &,  port);
-	port connect_sender(CurrentEvent &, port);
-    port connect_sender(DataLoggingRequest &, port);
+    port send_test_event(Node &, rport, synindex, bool);
+    port handles_test_event(SpikeEvent &,  port);
+    port handles_test_event(CurrentEvent &, rport);
+    port handles_test_event(DataLoggingRequest &, rport);
     
     void get_status(DictionaryDatum &) const;
     void set_status(const DictionaryDatum &);
@@ -472,16 +469,24 @@ namespace nest
   };
   
   inline
-  port stn_cond_neuron6::check_connection(Connection& c, port receptor_type)
-  {
+  port stn_cond_neuron6::send_test_event(Node& target, rport receptor_type, synindex, bool) 
+  { 
     SpikeEvent e;
-    e.set_sender(*this);
-    c.check_event(e);
-    return c.get_target()->connect_sender(e, receptor_type);
+    e.set_sender(*this); 
+    return target.handles_test_event(e, receptor_type); 
+  }
+  
+  inline
+  port stn_cond_neuron6::handles_test_event(SpikeEvent& e, rport receptor_type)
+  {
+      if (receptor_type <= 0)
+	  throw UnknownReceptorType(receptor_type, get_name());
+
+      return receptor_type;
   }
  
   inline
-  port stn_cond_neuron6::connect_sender(CurrentEvent&, port receptor_type)
+  port stn_cond_neuron6::handles_test_event(CurrentEvent&, rport receptor_type)
   {
     if (receptor_type != 0)
       throw UnknownReceptorType(receptor_type, get_name());
@@ -489,8 +494,8 @@ namespace nest
   }
  
   inline
-  port stn_cond_neuron6::connect_sender(DataLoggingRequest& dlr, 
-                                             port receptor_type)
+  port stn_cond_neuron6::handles_test_event(DataLoggingRequest& dlr, 
+                                             rport receptor_type)
   {
     if (receptor_type != 0)
       throw UnknownReceptorType(receptor_type, get_name());

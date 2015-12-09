@@ -396,6 +396,15 @@ extern const Name g_H;        //!<  H channel reversal potential
 extern const Name g_KL;        //!< Potassium leak conductance
 extern const Name E_KL;        //!< Potassium leak conductance
 extern const Name E_H;        //!<  H channel reversal potential
+extern const Name g_LT;        //!< Calcium conductance
+extern const Name g_HT;        //!< Calcium conductance
+extern const Name E_AHP;        //!<  H channel reversal potential
+extern const Name g_AHP;        //!<  H channel reversal potential
+//    extern const Name g_T;        //!< Calcium conductance
+//    extern const Name E_KL;        //!< Potassium leak conductance
+//    extern const Name g_KL;        //!< Potassium leak conductance
+//    extern const Name E_H;        //!<  H channel reversal potential
+//    extern const Name g_H;        //!<  H channel reversal potential
 
 
 // Specific to TC neuron models
@@ -409,6 +418,31 @@ extern const Name TC_p0;
 extern const Name TC_c1;
 extern const Name TC_cai;
 
+ 
+// Specific to RE neuron models
+extern const Name RE_m;
+extern const Name RE_h;
+extern const Name RE_n;
+extern const Name RE_a;
+extern const Name RE_b;
+extern const Name RE_x;
+extern const Name RE_z;
+extern const Name RE_cai;
+
+// Specific to HT neuron models
+extern const Name HT_m;
+extern const Name HT_h;
+extern const Name HT_n;
+extern const Name HT_a;
+extern const Name HT_b;
+extern const Name HT_c;
+extern const Name HT_d;
+extern const Name HT_e;
+extern const Name HT_z;
+extern const Name HT_o2;
+extern const Name HT_p;
+extern const Name HT_cai_LT;
+extern const Name HT_cai_HT;
 
 
 }

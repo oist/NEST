@@ -1017,13 +1017,6 @@ namespace nest
 	}
 	
 	
-	port nest::stn_cond_neuron6::connect_sender(SpikeEvent& e, port receptor_type)
-	{
-		if (receptor_type <= 0)
-			throw UnknownReceptorType(receptor_type, get_name());
-			
-		return receptor_type;
-	}
 	
 
 	void nest::stn_cond_neuron6::handle(SpikeEvent & e)

@@ -367,6 +367,15 @@ const Name g_H("g_H");
 const Name g_KL("g_KL");
 const Name E_H("E_H");
 const Name E_KL("E_KL");
+const Name g_LT("g_LT");
+const Name g_HT("g_HT");
+const Name g_AHP("g_AHP");
+const Name E_AHP("E_AHP");
+//    const Name E_KL("E_KL");
+//    const Name g_KL("g_KL");
+//    const Name g_T("g_T");
+//    const Name g_H("g_H");
+//    const Name E_H("E_H");
 
 // Specific to TC neuron models
 const Name TC_m("TC_m");
@@ -378,6 +387,31 @@ const Name TC_o1("TC_o1");
 const Name TC_p0("TC_p0");
 const Name TC_c1("TC_c1");
 const Name TC_cai("TC_cai");
+
+// Specific to RE neuron models
+const Name RE_m("RE_m");
+const Name RE_h("RE_h");
+const Name RE_n("RE_n");
+const Name RE_a("RE_a");
+const Name RE_b("RE_b");
+const Name RE_x("RE_x");
+const Name RE_z("RE_z");
+const Name RE_cai("RE_cai");
+
+// Specific to TC neuron models
+const Name HT_m("HT_m");
+const Name HT_h("HT_h");
+const Name HT_n("HT_n");
+const Name HT_a("HT_a");
+const Name HT_b("HT_b");
+const Name HT_c("HT_c");
+const Name HT_d("HT_d");
+const Name HT_e("HT_e");
+const Name HT_z("HT_z");
+const Name HT_o2("HT_o2");
+const Name HT_p("HT_p");
+const Name HT_cai_LT("HT_cai_LT");
+const Name HT_cai_HT("HT_cai_HT");
 
 
 }

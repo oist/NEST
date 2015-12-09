@@ -132,6 +132,12 @@
 #endif
 
 #include "tc_psc_alpha.h"
+#include "ht_psc_alpha.h"
+#include "re_psc_alpha.h"
+#include "iaf_cond_beta.h"
+#include "stn_cond_neuron6.h"
+#include "izhikevich_cond.h"
+
 
 
 namespace nest
@@ -443,6 +449,11 @@ ModelsModule::init( SLIInterpreter* )
     net_, "stdp_dopamine_synapse_hpc" );
 
   register_model< tc_psc_alpha >( net_, "tc_psc_alpha" );
+  register_model< ht_psc_alpha >( net_, "ht_psc_alpha" );
+  register_model< re_psc_alpha >( net_, "re_psc_alpha" );
+  register_model< iaf_cond_beta >( net_, "iaf_cond_beta" );
+  register_model< stn_cond_neuron6 >( net_, "stn_cond_neuron6" );
+  register_model< izhikevich_cond >( net_, "izhikevich_cond" );
 }
 
 } // namespace nest

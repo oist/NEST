@@ -86,8 +86,12 @@ libmodelsmodule_la_SOURCES= \
 		tsodyks_connection_hom.h tsodyks_connection_hom.cpp\
 		volume_transmitter.h volume_transmitter.cpp\
 		spike_dilutor.h spike_dilutor.cpp\
-		tc_psc_alpha.h tc_psc_alpha.cpp
-
+		tc_psc_alpha.h tc_psc_alpha.cpp\
+		ht_psc_alpha.h ht_psc_alpha.cpp\
+		re_psc_alpha.h re_psc_alpha.cpp\
+		iaf_cond_beta.h iaf_cond_beta.cpp\
+		stn_cond_neuron6.h stn_cond_neuron6.cpp\
+		izhikevich_cond.h izhikevich_cond.cpp
 
 AM_CPPFLAGS= -I$(top_srcdir)/libnestutil\
 		-I$(top_srcdir)/librandom\
