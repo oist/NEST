@@ -138,6 +138,7 @@
 #include "stn_cond_neuron6.h"
 #include "izhikevich_cond.h"
 
+#include "stn_to_gpe_stp_connection.h"
 
 
 namespace nest
@@ -454,6 +455,9 @@ ModelsModule::init( SLIInterpreter* )
   register_model< iaf_cond_beta >( net_, "iaf_cond_beta" );
   register_model< stn_cond_neuron6 >( net_, "stn_cond_neuron6" );
   register_model< izhikevich_cond >( net_, "izhikevich_cond" );
+
+  register_connection_model< STNtoGPeSTPConnection< TargetIdentifierPtrRport > >(
+    net_, "stn_to_gpe_stp_synapse" );
 }
 
 } // namespace nest

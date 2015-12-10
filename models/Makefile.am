@@ -91,7 +91,8 @@ libmodelsmodule_la_SOURCES= \
 		re_psc_alpha.h re_psc_alpha.cpp\
 		iaf_cond_beta.h iaf_cond_beta.cpp\
 		stn_cond_neuron6.h stn_cond_neuron6.cpp\
-		izhikevich_cond.h izhikevich_cond.cpp
+		izhikevich_cond.h izhikevich_cond.cpp\
+		stn_to_gpe_stp_connection.h
 
 AM_CPPFLAGS= -I$(top_srcdir)/libnestutil\
 		-I$(top_srcdir)/librandom\
