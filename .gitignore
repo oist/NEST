@@ -1,5 +1,6 @@
 # git ignore patterns
 
+*~
 autom4te.cache/
 libltdl/
 
