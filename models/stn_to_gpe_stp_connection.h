@@ -31,7 +31,7 @@ References:
 
 namespace nest 
 {
-    template < typename targetidentifierT 
+    template < typename targetidentifierT >
 	class STNtoGPeSTPConnection  : public Connection< targetidentifierT >
     {
 	public:
@@ -101,7 +101,6 @@ namespace nest
 	    double_t f0_;
 	    double_t f_;
 	    double_t f_bound;
-
 	    double_t tau_dep;   //!< [ms] time constant for fascilitation
 	    double_t inc_dep;
 	    double_t d0_;
@@ -118,7 +117,7 @@ namespace nest
      * \param t_lastspike Time point of last spike emitted
      */
     template < typename targetidentifierT >
-    void STNtoGPeSTPConnection< targetidentifierT >::send(Event& e, thread t, double_t t_lastspike, const CommonSynapseProperties &)
+    inline void STNtoGPeSTPConnection< targetidentifierT >::send(Event& e, thread t, double_t t_lastspike, const CommonSynapseProperties &)
     {
 	Node *target = get_target(t);
 	double_t delay = get_delay();	
@@ -135,7 +134,6 @@ namespace nest
 	d_ = d0_ + (d_ - d0_)*Pd;
 	d_ *= inc_dep;
     
-
 	// send the spike to the target
 	e.set_receiver(*target);
 	e.set_weight( weight_ *f_ *d_ );
@@ -209,10 +207,5 @@ namespace nest
 	}
 
 } // namespace nest
-
-
-
-
-
 
 #endif // STN_TO_GPE_STP_CONNECTION_H
