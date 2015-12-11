@@ -181,16 +181,16 @@ namespace nest
     template < typename targetidentifierT >
 	STNtoGPeSTPConnection< targetidentifierT >::STNtoGPeSTPConnection( const STNtoGPeSTPConnection& rhs )
 	: ConnectionBase( rhs ),
-	weight_(weight_),
-	tau_fac(tau_fac),
-	inc_fac(inc_fac),
-	f0_(f0_),
-	f_(f_),
-	f_bound(f_bound),
-	tau_dep(tau_dep),
-	inc_dep(inc_dep),
-	d0_(d0_),
-	d_(d_)
+	weight_(rhs.weight_),
+	tau_fac(rhs.tau_fac),
+	inc_fac(rhs.inc_fac),
+	f0_(rhs.f0_),
+	f_(rhs.f_),
+	f_bound(rhs.f_bound),
+	tau_dep(rhs.tau_dep),
+	inc_dep(rhs.inc_dep),
+	d0_(rhs.d0_),
+	d_(rhs.d_)
     { }
 
     template < typename targetidentifierT > void
@@ -225,11 +225,6 @@ namespace nest
 	    updateValue<double_t>(d, "d0", d0_);
 	    updateValue<double_t>(d, "d", d_);
 	}
-
-
-
-
-
 
 } // namespace nest
 
