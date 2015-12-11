@@ -4,6 +4,7 @@
  *	Created by Osamu Shouno	2013/09/25
  *	Copyright 2011 Honda Research Institute Japan Co., Ltd. All rights reserved.
  *
+ *	2015-12-11 Converted to NEST 2.8  Jan Moren
  *
  *	Permission is granted to compile and modify
  *	this file for non-commercial use.
@@ -30,7 +31,7 @@ References:
 
 namespace nest 
 {
-    template < typename targetidentifierT >
+    template < typename targetidentifierT 
 	class STNtoGPeSTPConnection  : public Connection< targetidentifierT >
     {
 	public:
@@ -68,26 +69,9 @@ namespace nest
 	    void set_status(const DictionaryDatum & d, ConnectorModel &cm);
 
 	    /**
-	     * Set properties of this connection from position p in the properties
-	     * array given in dictionary.
-	     */  
-//	    //void set_status(const DictionaryDatum & d, index p, ConnectorModel &cm);
-
-	    /**
-	     * Create new empty arrays for the properties of this connection in the given
-	     * dictionary. It is assumed that they are not existing before.
-	     */
-//	    void initialize_property_arrays(DictionaryDatum & d) const;
-
-	    /**
-	     * Append properties of this connection to the given dictionary. If the
-	     * dictionary is empty, new arrays are created first.
-	     */
-//	    void append_properties(DictionaryDatum & d) const;
-
-	    /**
 	     * Send an event to the receiver of this connection.
 	     * \param e The event to send
+	     * \param t thread ID
 	     * \param t_lastspike Point in time of last spike sent.
 	     * \param cp Common properties to all synapses (empty).
 	     */
@@ -108,9 +92,6 @@ namespace nest
 
 	    void set_weight(double_t w) { weight_ = w; }
 
-	    // overloaded for all supported event types
-//	    using Connection::check_event;
-//	    void check_event(SpikeEvent&) {}
 
 	private:
 	    double_t weight_;
@@ -132,6 +113,7 @@ namespace nest
     /**
      * Send an event to the receiver of this connection.
      * \param e The event to send
+     * \param t thread ID
      * \param p The port under which this connection is stored in the Connector.
      * \param t_lastspike Time point of last spike emitted
      */
