@@ -139,6 +139,7 @@
 #include "izhikevich_cond.h"
 
 #include "stn_to_gpe_stp_connection.h"
+#include "gpe_stn_gabaa_connection3.h"
 
 
 namespace nest
@@ -458,6 +459,8 @@ ModelsModule::init( SLIInterpreter* )
 
   register_connection_model< STNtoGPeSTPConnection< TargetIdentifierPtrRport > >(
     net_, "stn_to_gpe_stp_synapse" );
+  register_connection_model< GPeSTN_GABAA_Connection3< TargetIdentifierPtrRport > >(
+    net_, "gpe_stn_gabaa_synapse3" );
 }
 
 } // namespace nest
