@@ -20,3 +20,5 @@ for SLI. To install it, add the following lines to your `.emacs` file:
   (load-library "${prefix}/share/nest/extras/emacs/postscript-sli")
   (load-library "${prefix}/share/nest/extras/emacs/sli")
 ```
+=======
+# nest
